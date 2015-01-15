@@ -1,9 +1,10 @@
-(ns eskom-scraper.core
+(ns clojure-web-scraper.core
   (:require [net.cgrand.enlive-html :as html])
   (:require [cheshire.core :as cheshire])
   (:require [clj-time.core :as t])
   (:require [clj-time.format :as f])
-  (:require [clj-time.local :as l]))
+  (:require [clj-time.local :as l])
+  (:require [clojure.java.io :as io]))
 
 (def base-url "http://loadshedding.eskom.co.za/LoadShedding/")
 (def municipalities-path "GetMunicipalities/?Id=")
@@ -15,7 +16,7 @@
 
 ; change this to hitting the web when it's ready
 (def sched-source
-  (slurp "/home/neil/personal/workspaces/clojure/eskom-scraper/resources/bakensklip-schedule.html"))
+  (slurp (io/file (io/resource "bakensklip-schedule.html"))))
 
 (def schedules
   #{0 453 2030 586 410 2475 443 249 2156 70 218 648 774 580 1230 164 282 468 756
@@ -92,21 +93,21 @@
 
 
 ;gets a set of all "Tot" values for all suburbs across the country
-(apply clojure.set/union 
-       (let 
-         [province-ids (keys province-names)
-          muni-ids (flatten 
-                     (for [province-id province-ids] 
-                       (->
-                         (muni-map province-id)
-                         (keys)
-                         )))]
-         (for [muni-id muni-ids] 
-           (tot-set muni-id))))
+;(apply clojure.set/union 
+;       (let 
+;         [province-ids (keys province-names)
+;          muni-ids (flatten 
+;                     (for [province-id province-ids] 
+;                       (->
+;                         (muni-map province-id)
+;                         (keys)
+;                         )))]
+;         (for [muni-id muni-ids] 
+;           (tot-set muni-id))))
 
 
 
-(suburb-map2 9)
+;(suburb-map2 9)
 
 (defn -to-dt [date-str]  
   (f/parse 
@@ -135,27 +136,27 @@
 
 ;(f/show-formatters)
 
-(loadshed-schedule sched-source)
+;(loadshed-schedule sched-source)
 
-(-fetch-url (str base-url suburbs-path 45))
+;(-fetch-url (str base-url suburbs-path 45))
 
-(muni-map 9)
+;(muni-map 9)
 
-(suburb-map 9)
+;(suburb-map 9)
 
-(cheshire/generate-string (suburb-map 21))
+;(cheshire/generate-string (suburb-map 21))
 
-(cheshire/generate-stream (suburb-map 9) (clojure.java.io/writer "/home/neil/personal/workspaces/clojure/eskom-scraper/resources/suburbs.json"))
+;(cheshire/generate-stream (suburb-map 9) (clojure.java.io/writer (io/resource "suburbs.json")))
 
 ;"21666":"Bakensklip"
 ;http://loadshedding.eskom.co.za/LoadShedding/GetScheduleM/21666/1/Western%20Cape/159
 
 
-(spit "/home/neil/personal/workspaces/clojure/eskom-scraper/resources/municipalities.txt" "Province ID,Province,Municipality ID,Municipality\n")
+;(spit (io/file (io/resource "municipalities.txt")) "Province ID,Province,Municipality ID,Municipality\n")
 
-(for [province-id (keys province-names)]
-  (spit "/home/neil/personal/workspaces/clojure/eskom-scraper/resources/municipalities.txt" 
-        (str (clojure.string/join "\n" 
-                          (map #(str (clojure.string/join "," %1)) 
-                               (munis-with-provinces province-id))) "\n") :append true))
+;(for [province-id (keys province-names)]
+;  (spit (io/file (io/resource "municipalities.txt")) 
+;        (str (clojure.string/join "\n" 
+;                          (map #(str (clojure.string/join "," %1)) 
+;                               (munis-with-provinces province-id))) "\n") :append true))
 

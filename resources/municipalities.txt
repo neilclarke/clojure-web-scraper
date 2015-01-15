@@ -1,0 +1,329 @@
+Province ID,Province,Municipality ID,Municipality
+1,Eastern Cape,180,Nkonkobe
+1,Eastern Cape,69,Ikwezi
+1,Eastern Cape,185,Nxuba
+1,Eastern Cape,8,Baviaans
+1,Eastern Cape,234,Tsolwana
+1,Eastern Cape,105,Lukanji
+1,Eastern Cape,14,Blue Crane Route
+1,Eastern Cape,207,Sakhisizwe
+1,Eastern Cape,59,Greater Kokstad
+1,Eastern Cape,89,Kou-Kamma
+1,Eastern Cape,57,Great Kei
+1,Eastern Cape,47,Engcobo
+1,Eastern Cape,197,Port St Johns
+1,Eastern Cape,186,Nyandeni
+1,Eastern Cape,173,Ngqushwa
+1,Eastern Cape,90,Kouga
+1,Eastern Cape,112,Maletswai
+1,Eastern Cape,18,Camdeboo
+1,Eastern Cape,36,Elundini
+1,Eastern Cape,250,Umzimvubu
+1,Eastern Cape,140,Mnquma
+1,Eastern Cape,75,Intsika Yethu
+1,Eastern Cape,168,Ndlambe
+1,Eastern Cape,76,Inxuba Yethemba
+1,Eastern Cape,209,Senqu
+1,Eastern Cape,6,Amahlathi
+1,Eastern Cape,174,Ngquza Hill
+1,Eastern Cape,183,Ntabankulu
+1,Eastern Cape,122,Matatiele
+1,Eastern Cape,216,Sundays River Valley
+1,Eastern Cape,144,Mohokare
+1,Eastern Cape,134,Mhlontlo
+1,Eastern Cape,125,Mbhashe
+1,Eastern Cape,74,Inkwanca
+1,Eastern Cape,109,Makana
+1,Eastern Cape,126,Mbizana
+1,Eastern Cape,170,Nelson Mandela Bay
+1,Eastern Cape,54,Gariep
+1,Eastern Cape,16,Buffalo City
+1,Eastern Cape,40,Emalahleni
+1,Eastern Cape,86,King Sabata Dalindyebo
+9,Western Cape,9,Beaufort West
+9,Western Cape,93,Laingsburg
+9,Western Cape,155,Mossel Bay
+9,Western Cape,87,Knysna
+9,Western Cape,21,City of Cape Town
+9,Western Cape,80,Kannaland
+9,Western Cape,33,Drakenstein
+9,Western Cape,20,Cederberg
+9,Western Cape,19,Cape Agulhas
+9,Western Cape,15,Breede Valley
+9,Western Cape,66,Hessequa
+9,Western Cape,190,Overstrand
+9,Western Cape,12,Bitou
+9,Western Cape,208,Saldanha Bay
+9,Western Cape,218,Swellendam
+9,Western Cape,257,Witzenberg
+9,Western Cape,94,Langeberg
+9,Western Cape,223,Theewaterskloof
+9,Western Cape,217,Swartland
+9,Western Cape,11,Bergrivier
+9,Western Cape,124,Matzikama
+9,Western Cape,198,Prince Albert
+9,Western Cape,55,George
+9,Western Cape,189,Oudtshoorn
+9,Western Cape,214,Stellenbosch
+7,North West,191,Phokwane
+7,North West,202,Ratlou
+7,North West,237,Tswelopele
+7,North West,231,Tokologo
+7,North West,96,Lekwa-Teemane
+7,North West,25,City of Tshwane
+7,North West,119,Maquassi Hills
+7,North West,152,Moses Kotane
+7,North West,106,Mafikeng
+7,North West,166,Naledi
+7,North West,62,Greater Taung
+7,North West,130,Merafong City
+7,North West,200,Ramotshere Moiloa
+7,North West,229,Tlokwe City Council
+7,North West,149,Moqhaka
+7,North West,235,Tswaing
+7,North West,206,Rustenburg
+7,North West,84,Kgetlengrivier
+7,North West,104,Local Municipality of Madibeng
+7,North West,153,Moshaweng
+7,North West,252,Ventersdorp
+7,North West,114,Mamusa
+7,North West,151,Moretele
+7,North West,31,Ditsobotla
+7,North West,163,NW397
+7,North West,23,City of Matlosana
+1,Eastern Cape,180,Nkonkobe
+1,Eastern Cape,69,Ikwezi
+1,Eastern Cape,185,Nxuba
+1,Eastern Cape,8,Baviaans
+1,Eastern Cape,234,Tsolwana
+1,Eastern Cape,105,Lukanji
+1,Eastern Cape,14,Blue Crane Route
+1,Eastern Cape,207,Sakhisizwe
+1,Eastern Cape,59,Greater Kokstad
+1,Eastern Cape,89,Kou-Kamma
+1,Eastern Cape,57,Great Kei
+1,Eastern Cape,47,Engcobo
+1,Eastern Cape,197,Port St Johns
+1,Eastern Cape,186,Nyandeni
+1,Eastern Cape,173,Ngqushwa
+1,Eastern Cape,90,Kouga
+1,Eastern Cape,112,Maletswai
+1,Eastern Cape,18,Camdeboo
+1,Eastern Cape,36,Elundini
+1,Eastern Cape,250,Umzimvubu
+1,Eastern Cape,140,Mnquma
+1,Eastern Cape,75,Intsika Yethu
+1,Eastern Cape,168,Ndlambe
+1,Eastern Cape,76,Inxuba Yethemba
+1,Eastern Cape,209,Senqu
+1,Eastern Cape,6,Amahlathi
+1,Eastern Cape,174,Ngquza Hill
+1,Eastern Cape,183,Ntabankulu
+1,Eastern Cape,122,Matatiele
+1,Eastern Cape,216,Sundays River Valley
+1,Eastern Cape,144,Mohokare
+1,Eastern Cape,134,Mhlontlo
+1,Eastern Cape,125,Mbhashe
+1,Eastern Cape,74,Inkwanca
+1,Eastern Cape,109,Makana
+1,Eastern Cape,126,Mbizana
+1,Eastern Cape,170,Nelson Mandela Bay
+1,Eastern Cape,54,Gariep
+1,Eastern Cape,16,Buffalo City
+1,Eastern Cape,40,Emalahleni
+1,Eastern Cape,86,King Sabata Dalindyebo
+4,KwaZulu-Natal,258,eDumbe
+4,KwaZulu-Natal,188,Okhahlamba
+4,KwaZulu-Natal,3,Abaqulusi
+4,KwaZulu-Natal,50,Ezingoleni
+4,KwaZulu-Natal,157,Msinga
+4,KwaZulu-Natal,49,Ethekwini
+4,KwaZulu-Natal,26,Dannhauser
+4,KwaZulu-Natal,118,Maphumulo
+4,KwaZulu-Natal,60,Greater Kokstad
+4,KwaZulu-Natal,238,UMuziwabantu
+4,KwaZulu-Natal,251,Umzumbe
+4,KwaZulu-Natal,169,Ndwedwe
+4,KwaZulu-Natal,68,Hlabisa
+4,KwaZulu-Natal,156,Mpofana
+4,KwaZulu-Natal,159,Mthonjaneni
+4,KwaZulu-Natal,221,The Big 5 False Bay
+4,KwaZulu-Natal,67,Hibiscus Coast
+4,KwaZulu-Natal,259,uMhlathuze
+4,KwaZulu-Natal,249,Umzimkhulu
+4,KwaZulu-Natal,115,Mandeni
+4,KwaZulu-Natal,244,Umhlabuyalingana
+4,KwaZulu-Natal,73,Ingwe
+4,KwaZulu-Natal,247,Umtshezi
+4,KwaZulu-Natal,261,uMngeni
+4,KwaZulu-Natal,181,Nongoma
+4,KwaZulu-Natal,44,Emnambithi/Ladysmith
+4,KwaZulu-Natal,184,Ntambanana
+4,KwaZulu-Natal,222,The Msunduzi
+4,KwaZulu-Natal,194,Pixley ka Seme
+4,KwaZulu-Natal,239,UPhongolo
+4,KwaZulu-Natal,240,Ubuhlebezwe
+4,KwaZulu-Natal,171,Newcastle
+4,KwaZulu-Natal,70,Imbabazane
+4,KwaZulu-Natal,77,Jozini
+4,KwaZulu-Natal,177,Nkandla
+4,KwaZulu-Natal,260,uMlalazi
+4,KwaZulu-Natal,37,Emadlangeni
+4,KwaZulu-Natal,46,Endumeni
+4,KwaZulu-Natal,127,Mbizana
+4,KwaZulu-Natal,262,uMshwathi
+4,KwaZulu-Natal,138,Mkhambathini
+4,KwaZulu-Natal,133,Mfolozi
+4,KwaZulu-Natal,182,Nqutu
+4,KwaZulu-Natal,255,Vulamehlo
+4,KwaZulu-Natal,204,Richmond
+4,KwaZulu-Natal,72,Indaka
+4,KwaZulu-Natal,248,Umvoti
+4,KwaZulu-Natal,91,Kwa Sani
+4,KwaZulu-Natal,242,Ulundi
+4,KwaZulu-Natal,71,Impendle
+4,KwaZulu-Natal,92,KwaDukuza
+4,KwaZulu-Natal,243,Umdoni
+4,KwaZulu-Natal,160,Mtubatuba
+6,Mpumalanga,219,Thaba Chweu
+6,Mpumalanga,158,Msukaligwa
+6,Mpumalanga,139,Mkhondo
+6,Mpumalanga,195,Pixley ka Seme
+6,Mpumalanga,101,Lesedi
+6,Mpumalanga,179,Nkomazi
+6,Mpumalanga,30,Dipaleseng
+6,Mpumalanga,226,Thembisile
+6,Mpumalanga,17,Bushbuckridge
+6,Mpumalanga,172,Newcastle
+6,Mpumalanga,128,Mbombela
+6,Mpumalanga,5,Albert Luthuli
+6,Mpumalanga,38,Emadlangeni
+6,Mpumalanga,39,Emakhazeni
+6,Mpumalanga,95,Lekwa
+6,Mpumalanga,254,Victor Khanye
+6,Mpumalanga,56,Govan Mbeki
+6,Mpumalanga,32,Dr JS Moroka
+6,Mpumalanga,245,Umjindi
+6,Mpumalanga,41,Emalahleni
+6,Mpumalanga,215,Steve Tshwete
+3,Gauteng,253,Victor Khanye
+3,Gauteng,34,Ekurhuleni
+3,Gauteng,201,Randfontein
+3,Gauteng,22,City of Johannesburg
+3,Gauteng,225,Thembisile
+3,Gauteng,176,Ngwathe
+3,Gauteng,100,Lesedi
+3,Gauteng,136,Midvaal
+3,Gauteng,24,City of Tshwane
+3,Gauteng,43,Emfuleni
+3,Gauteng,256,Westonaria
+3,Gauteng,143,Mogale City
+3,Gauteng,103,Local Municipality of Madibeng
+3,Gauteng,129,Merafong City
+3,Gauteng,150,Moretele
+3,Gauteng,132,Metsimaholo
+2,Free State,88,Kopanong
+2,Free State,175,Ngwathe
+2,Free State,193,Phumelela
+2,Free State,135,Midvaal
+2,Free State,123,Matjhabeng
+2,Free State,116,Mangaung
+2,Free State,113,Maluti a Phofung
+2,Free State,107,Mafube
+2,Free State,228,Tlokwe City Council
+2,Free State,42,Emfuleni
+2,Free State,145,Mohokare
+2,Free State,210,Setsoto
+2,Free State,148,Moqhaka
+2,Free State,27,Dihlabeng
+2,Free State,121,Masilonyana
+2,Free State,102,Letsemeng
+2,Free State,165,Naledi
+2,Free State,236,Tswelopele
+2,Free State,178,Nketoana
+2,Free State,131,Metsimaholo
+2,Free State,230,Tokologo
+2,Free State,187,Okhahlamba
+2,Free State,164,Nala
+2,Free State,29,Dipaleseng
+2,Free State,117,Mantsopa
+9,Western Cape,9,Beaufort West
+9,Western Cape,93,Laingsburg
+9,Western Cape,155,Mossel Bay
+9,Western Cape,87,Knysna
+9,Western Cape,21,City of Cape Town
+9,Western Cape,80,Kannaland
+9,Western Cape,33,Drakenstein
+9,Western Cape,20,Cederberg
+9,Western Cape,19,Cape Agulhas
+9,Western Cape,15,Breede Valley
+9,Western Cape,66,Hessequa
+9,Western Cape,190,Overstrand
+9,Western Cape,12,Bitou
+9,Western Cape,208,Saldanha Bay
+9,Western Cape,218,Swellendam
+9,Western Cape,257,Witzenberg
+9,Western Cape,94,Langeberg
+9,Western Cape,223,Theewaterskloof
+9,Western Cape,217,Swartland
+9,Western Cape,11,Bergrivier
+9,Western Cape,124,Matzikama
+9,Western Cape,198,Prince Albert
+9,Western Cape,55,George
+9,Western Cape,189,Oudtshoorn
+9,Western Cape,214,Stellenbosch
+5,Limpopo,58,Greater Giyani
+5,Limpopo,51,Fetakgomo
+5,Limpopo,141,Modimolle
+5,Limpopo,227,Thulamela
+5,Limpopo,4,Aganang
+5,Limpopo,196,Polokwane
+5,Limpopo,61,Greater Letaba
+5,Limpopo,162,Mutale
+5,Limpopo,98,Lepele-Nkumpi
+5,Limpopo,111,Makhuduthamaga
+5,Limpopo,7,Ba-Phalaborwa
+5,Limpopo,199,Ramotshere Moiloa
+5,Limpopo,48,Ephraim Mogale
+5,Limpopo,13,Blouberg
+5,Limpopo,35,Elias Motsoaledi
+5,Limpopo,110,Makhado
+5,Limpopo,99,Lephalale
+5,Limpopo,120,Maruleng
+5,Limpopo,146,Molemole
+5,Limpopo,63,Greater Tubatse
+5,Limpopo,142,Mogalakwena
+5,Limpopo,220,Thabazimbi
+5,Limpopo,147,Mookgopong
+5,Limpopo,10,Bela-Bela
+5,Limpopo,161,Musina
+5,Limpopo,64,Greater Tzaneen
+8,Northern Cape,108,Magareng
+8,Northern Cape,83,Kgatelopele
+8,Northern Cape,28,Dikgatlong
+8,Northern Cape,224,Thembelihle
+8,Northern Cape,82,Karoo-Hoogland
+8,Northern Cape,232,Tokologo
+8,Northern Cape,192,Phokwane
+8,Northern Cape,213,Sol Plaatjie
+8,Northern Cape,81,Kareeberg
+8,Northern Cape,167,Nama Khoi
+8,Northern Cape,78,Kai !Garib
+8,Northern Cape,203,Renosterberg
+8,Northern Cape,212,Siyathemba
+8,Northern Cape,246,Umsobomvu
+8,Northern Cape,53,Gamagara
+8,Northern Cape,137,Mier
+8,Northern Cape,241,Ubuntu
+8,Northern Cape,154,Moshaweng
+8,Northern Cape,97,Lekwa-Teemane
+8,Northern Cape,205,Richtersveld
+8,Northern Cape,1,!Kheis
+8,Northern Cape,211,Siyancuma
+8,Northern Cape,45,Emthanjeni
+8,Northern Cape,233,Tsantsabane
+8,Northern Cape,85,KhGi-Ma
+8,Northern Cape,2,//Khara Hais
+8,Northern Cape,65,Hantam
+8,Northern Cape,52,Ga-Segonyana
+8,Northern Cape,79,Kamiesberg

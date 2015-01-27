@@ -6,9 +6,20 @@
   (:require [clj-time.local :as l])
   (:require [clojure.java.io :as io]))
 
-(def base-url "http://loadshedding.eskom.co.za/LoadShedding/")
-(def municipalities-path "GetMunicipalities/?Id=")
-(def suburbs-path "GetSurburbData/?pageSize=1000&pageNum=1&searchTerm=&id=")
+(def base-url "http://loadshedding.eskom.co.za/LoadShedding")
+(def municipalities-path "/GetMunicipalities/?Id=")
+(def suburbs-path "/GetSurburbData/?pageSize=1000&pageNum=1&searchTerm=&id=")
+
+;http://loadshedding.eskom.co.za/LoadShedding/GetScheduleM/21666/1/Western%20Cape/159
+(defn- make-schedule-path 
+  "builds the URL format used to access a single load-shedding schedule for a suburb"
+  [suburb-id seriousness province-name tot-id]
+  (let [encoded-province-name (clojure.string/replace province-name " " "%20")] ;encoding hack
+    (->>
+      [base-url "GetScheduleM" suburb-id seriousness encoded-province-name tot-id]
+      (interpose "/")
+      (apply str))))
+
 (def loadshed-day-date-format "dd MMM YYYY")
 
 (def province-names
@@ -17,6 +28,8 @@
 ; change this to hitting the web when it's ready
 (def sched-source
   (slurp (io/file (io/resource "bakensklip-schedule.html"))))
+  
+;(make-schedule-path 21666 1 "Western Cape" 159)
 
 (def schedules
   #{0 453 2030 586 410 2475 443 249 2156 70 218 648 774 580 1230 164 282 468 756
@@ -32,33 +45,33 @@
     87 160 696 738 486 336 660 272 114 1236 628 655 318 1092 579 1078 861 960 379
     4290 1479 246 2304 820 390 84})
 
-(defn -fetch-url [url]
+(defn- fetch-url [url]
   (with-open [inputstream (-> (java.net.URL. url)
                             .openConnection
                             (doto (.setRequestProperty "User-Agent" "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0"))
                             .getContent)]
     (html/html-resource inputstream)))
 
-(defn -read-json[url]
+(defn- read-json[url]
   (cheshire/parse-string 
     (apply str 
            (-> 
-             (-fetch-url url)
+             (fetch-url url)
              first
              :content
              first
              :content
              ))))
 
-(defn -read-munis [id]   
-  (-read-json (str base-url municipalities-path id)))
+(defn- read-munis [id]   
+  (read-json (str base-url municipalities-path id)))
 
-(defn -read-suburbs [id]
-  (-read-json (str base-url suburbs-path id)))
+(defn- read-suburbs [id]
+  (read-json (str base-url suburbs-path id)))
 
 (defn muni-map [province-id]
   (let 
-    [muni-json (-read-munis province-id)
+    [muni-json (read-munis province-id)
      muni-names (map #(get %1 "Text") muni-json)
      muni-ids (map #(get %1 "Value") muni-json)]
     (zipmap muni-ids muni-names)))
@@ -73,22 +86,24 @@
 
 (defn suburb-map [muni-id]
   (let 
-    [suburb-json ((-read-suburbs muni-id) "Results")
+    [suburb-json ((read-suburbs muni-id) "Results")
      suburb-names (map #(get %1 "text") suburb-json)
      suburb-ids (map #(get %1 "id") suburb-json)]
     (zipmap suburb-ids suburb-names)))
 
 (defn tot-set [muni-id]
   (let 
-    [suburb-json ((-read-suburbs muni-id) "Results")]
+    [suburb-json ((read-suburbs muni-id) "Results")]
     (set (map #(get %1 "Tot") suburb-json))))
 
-(defn suburb-map2 [muni-id]
+(defn suburb-map2 
+  "Returns a vector of suburb tuples - ID, Name, schedule-id"
+  [muni-id]
   (let 
-    [suburb-json ((-read-suburbs muni-id) "Results")]
+    [suburb-json ((read-suburbs muni-id) "Results")]
     (into [] (map #(into [] (vals %1)) suburb-json))))
 
-;((-read-suburbs 9) "Results")
+;((read-suburbs 9) "Results")
 ;(tot-set 9)
 
 
@@ -109,36 +124,36 @@
 
 ;(suburb-map2 9)
 
-(defn -to-dt [date-str]  
+(defn- to-dt [date-str]  
   (f/parse 
     (f/formatter loadshed-day-date-format) 
     (str (apply str (drop 5 date-str)) " " (-> (l/local-now) (l/format-local-time :year)))))
 
-(defn -select-loadshed-days[loadshed-resource]
+(defn- select-loadshed-days[loadshed-resource]
   (html/select 
     (html/select loadshed-resource [[:div.scheduleDay (html/has [:a])]]) [:div.dayMonth]))
 
-(defn -select-loadshed-times[loadshed-resource]
+(defn- select-loadshed-times[loadshed-resource]
   (html/select 
     (html/select loadshed-resource [[:div.scheduleDay (html/has [:a])]]) [:a]))
 
 (defn loadshed-schedule 
   [schedule-html]  
   (let [html-source (html/html-resource (java.io.StringReader. schedule-html))
-        loadshed-days (map -to-dt
+        loadshed-days (map to-dt
                            (map clojure.string/trim 
                                 (map html/text 
-                                     (-select-loadshed-days html-source))))
+                                     (select-loadshed-days html-source))))
         
         loadshed-times (map html/text 
-                            (-select-loadshed-times html-source))]
+                            (select-loadshed-times html-source))]
     (zipmap loadshed-days loadshed-times)))
 
 ;(f/show-formatters)
 
-;(loadshed-schedule sched-source)
+(loadshed-schedule sched-source)
 
-;(-fetch-url (str base-url suburbs-path 45))
+;(fetch-url (str base-url suburbs-path 45))
 
 ;(muni-map 9)
 
@@ -152,11 +167,19 @@
 ;http://loadshedding.eskom.co.za/LoadShedding/GetScheduleM/21666/1/Western%20Cape/159
 
 
-;(spit (io/file (io/resource "municipalities.txt")) "Province ID,Province,Municipality ID,Municipality\n")
+(spit (io/file (io/resource "municipalities.txt")) "Province ID,Province,Municipality ID,Municipality\n")
 
-;(for [province-id (keys province-names)]
-;  (spit (io/file (io/resource "municipalities.txt")) 
-;        (str (clojure.string/join "\n" 
-;                          (map #(str (clojure.string/join "," %1)) 
-;                               (munis-with-provinces province-id))) "\n") :append true))
+(for [province-id (keys province-names)]
+  (spit (io/file (io/resource "municipalities.txt")) 
+        (str (clojure.string/join "\n" 
+                          (map #(str (clojure.string/join "," %1)) 
+                               (munis-with-provinces province-id))) "\n") :append true))
+
+(for [province-id (keys province-names)]  
+        (str (clojure.string/join "\n" 
+                          (map #(str (clojure.string/join "," %1)) 
+                               (munis-with-provinces province-id))) "\n"))
+
+(for [province-id (keys province-names)]
+  (munis-with-provinces province-id))
 

@@ -6,11 +6,6 @@
             [clj-time.format :as f]
             [clj-time.local :as l]
             [clojure.java.io :as io])
-  ;(:require [cheshire.core :as cheshire])
-  ;(:require [clj-time.core :as t])
-  ;(:require [clj-time.format :as f])
-  ;(:require [clj-time.local :as l])
-  ;(:require [clojure.java.io :as io])
   )
 
 (def base-url "http://loadshedding.eskom.co.za/LoadShedding")
@@ -58,10 +53,11 @@
 ;    4290 1479 246 2304 820 390 84})
 
 (defn- fetch-url [url]
-  (with-open [inputstream (-> (java.net.URL. url)
-                            .openConnection
-                            (doto (.setRequestProperty "User-Agent" "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0"))
-                            .getContent)]
+  (with-open 
+    [inputstream (-> (java.net.URL. url)
+                   .openConnection
+                   (doto (.setRequestProperty "User-Agent" "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0"))
+                   .getContent)]
     (html/html-resource inputstream)))
 
 (defn- read-json[url]
@@ -81,14 +77,14 @@
 (defn- read-suburbs [id]
   (read-json (str base-url suburbs-path id)))
 
-(defn muni-map [province-id]
+(defn- muni-map [province-id]
   (let 
     [muni-json (read-munis province-id)
      muni-names (map #(get %1 "Text") muni-json)
      muni-ids (map #(get %1 "Value") muni-json)]
     (zipmap muni-ids muni-names)))
 
-(defn munis-with-provinces 
+(defn- munis-with-provinces 
   [province-id]
   (let [province-name (province-names province-id)
         munis (muni-map province-id)]
@@ -96,19 +92,19 @@
       [m (vec munis)]
       (flatten [province-id province-name m]))))
 
-(defn suburb-map [muni-id]
+(defn- suburb-map [muni-id]
   (let 
     [suburb-json ((read-suburbs muni-id) "Results")
      suburb-names (map #(get %1 "text") suburb-json)
      suburb-ids (map #(get %1 "id") suburb-json)]
     (zipmap suburb-ids suburb-names)))
 
-(defn tot-set [muni-id]
+(defn- tot-set [muni-id]
   (let 
     [suburb-json ((read-suburbs muni-id) "Results")]
     (set (map #(get %1 "Tot") suburb-json))))
 
-(defn suburb-map2 
+(defn- suburb-map2 
   "Returns a vector of suburb tuples - ID, Name, schedule-id"
   [muni-id]
   (let 
